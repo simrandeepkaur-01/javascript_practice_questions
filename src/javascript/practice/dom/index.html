@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../dist/output.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td class="border-2 border-black">1.1</td>
+                <td class="border-2 border-black">2.1</td>
+                <td class="border-2 border-black">3.1</td>
+                <td class="border-2 border-black">4.1</td>
+                <td class="border-2 border-black">5.1</td>
+            </tr>
+            <tr>
+                <td class="border-2 border-black">1.2</td>
+                <td class="border-2 border-black">2.2</td>
+                <td class="border-2 border-black">3.2</td>
+                <td class="border-2 border-black">4.2</td>
+                <td class="border-2 border-black">5.2</td>
+            </tr>
+            <tr>
+                <td class="border-2 border-black">1.3</td>
+                <td class="border-2 border-black">2.3</td>
+                <td class="border-2 border-black">3.3</td>
+                <td class="border-2 border-black">4.3</td>
+                <td class="border-2 border-black">5.3</td>
+            </tr>
+            <tr>
+                <td class="border-2 border-black">1.4</td>
+                <td class="border-2 border-black">2.4</td>
+                <td class="border-2 border-black">3.4</td>
+                <td class="border-2 border-black">4.4</td>
+                <td class="border-2 border-black">5.4</td>
+            </tr>
+            <tr>
+                <td class="border-2 border-black">1.5</td>
+                <td class="border-2 border-black">2.5</td>
+                <td class="border-2 border-black">3.5</td>
+                <td class="border-2 border-black">4.5</td>
+                <td class="border-2 border-black">5.5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let tr = document.querySelectorAll('tr');
+
+        tr.forEach((values, index) => {
+            let childs = values.children[index];
+            childs.style.backgroundColor = 'red';
+        });
+
+
+
+        // Question 2
+        // sum all the values if user press cancel button of all the values that user has entered.
+
+        function sumInput() {
+            let value = parseInt(prompt('Enter a number'));
+            if (value === NaN || value === '') {
+                return sum;
+            }
+            sumInput();
+        }
+        sumInput();
+
+        // Question 3
+        /* Create your own forEach function
+            example :-
+                forEach(array, (el, index) => {
+                    console.log(el)
+                }) */
+
+    </script>
+</body>
+
+</html>

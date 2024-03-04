@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arrOfObj = [{
+            title: 'a',
+            children: [{
+                title: 'a1',
+                children: [{
+                    title: 'a1.1',
+                }, {
+                    title: 'a1.2',
+                }]
+            }, {
+                title: 'a2',
+            }]
+        }, {
+            title: 'b'
+        }];
+
+
+        //creating html elements using string concatination.
+        function elementTree(arr) {
+            let ul = '<ul>';
+            for (let i = 0; i < arr.length; i++) {
+                let li = '<li>';
+                li += arr[i].title;
+
+                if (arr[i].children) {
+                    li += elementTree(arr[i].children);
+                }
+                li += `</li>`;
+
+                ul += li;
+            }
+            return ul += `</ul>`;
+        }
+        document.body.innerHTML = elementTree(arrOfObj);
+
+
+
+        //creating html elements
+        // function elementTree2(arr) {
+        //     let element_Ul = document.createElement('ul');
+        //     document.body.append(element_Ul);
+
+        //     for (let i = 0; i < arr.length; i++) {
+
+        //         let element_Li = document.createElement('li');
+        //         let liText = arr[i].title;
+
+        //         element_Li.append(arr[i].title);
+        //         element_Ul.appendChild(element_Li);
+
+        //         if (arr[i].children) {
+        //             element_Li.appendChild(elementTree2(arr[i].children));
+        //         }
+                
+        //     }
+        //     return element_Ul;
+        // }
+        // console.log(elementTree2(arrOfObj));
+
+    </script>
+</body>
+
+</html>

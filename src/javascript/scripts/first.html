@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Returns true for an object and false for an array and other datatypes.
+        let isEmptyObj = function (value) {
+            if (Array.isArray(value)) {
+                return false;
+            }
+            if (value instanceof Object) {
+                return Object.entries(value).length === 0;
+            }
+            return false;
+        }
+
+
+        // for loop
+        for (let key in product) {
+                console.log(product[key]);
+            }
+
+        let product = [{
+            name: 'product1',
+            price: 1000,
+            discount: 10
+        }, {
+            name: 'product2',
+            price: 50,
+            discount: 7
+        }, {
+            name: 'product1',
+            price: 100,
+            discount: 0
+        }
+        ];
+
+        let product_price = function () {
+            product.forEach(function (item) {
+                if (item.hasOwnProperty('discount')) {
+                    // if price is greater than 100
+                    if (item['price'] >= 100) {
+                        item['price'] -= (item['price'] * item['discount'] / 100);
+                        //  if price is less than 100
+                    } else {
+                        item['price'] -= (item['price'] * item['discount'] / 100);
+                    }
+
+                }
+                console.log(item['price']);
+                return product;
+            });
+
+        }
+        product_price();
+
+        // map
+        let arr = [10, 20, 30];
+
+        arr.forEach(item => {
+            console.log(item * 2);
+        });
+
+
+        let newArr = arr.map(item => {
+            return item / 2;
+        });
+        console.log(arr);
+        console.log(newArr);
+    </script>
+
+</body>
+
+</html>

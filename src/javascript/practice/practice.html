@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // switch case
+
+        // let age = 25;
+        // switch (true) {
+        //     case (age < 18): {
+        //         document.write('not eligible');
+        //         break;
+        //     }
+        //     case (age >= 18): {
+        //         document.write('eligible');
+        //         break;
+        //     }
+        //     default: {
+        //         document.write('enter valid age.....');
+        //         break;
+        //     }
+        // }
+
+
+        //---------------------object functions-----------------------
+
+        // constructor function
+        // to store values in same properties, we have to create objects of each student again and again with same property-name. so we create a contructor function.
+        // name of constructor should be start with uppercase
+        function Student(first, last, age, Class) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.class = Class;
+            // adding method to constructor
+            this.newName = function (new_name) {
+                return this.newname = new_name;
+            }
+        }
+
+
+        // if we want to add a new property to constructor and don't want to add it directly. we use prototype...
+        Student.prototype.fatherName = 'father';
+        Student.prototype.parent = function(parent){
+            return this.parent = parent;
+        }
+
+        // calling by creating objects
+        let student1 = new Student('simran', 'saini', 21, 1);
+        let student2 = new Student('karman', 'saini', 15, 1);
+
+        //adding new property and function to a particular object.
+        student1.nationality = 'India';
+        student1.name = function () {
+            return this.firstName + " " + this.lastName;
+        }
+
+        // calling function - newName
+        student1.newName();
+
+
+        console.log(student1, student2);
+        console.log(student1.name());
+        console.log(student1.newName('newwww name'));
+        console.log(student1.fatherName);
+        console.log(student1.parent('calling parent function'));
+    </script>
+</body>
+
+</html>
